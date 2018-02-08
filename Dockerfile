@@ -2,7 +2,12 @@ FROM grafana/grafana:<VERSION>
 
 ENV GF_PATHS_PLUGINS=/plugins
 
-RUN grafana-cli plugins install raintank-worldping-app
+RUN grafana-cli --pluginsDir $GF_PATHS_PLUGINS plugins install raintank-worldping-app
+RUN grafana-cli --pluginsDir $GF_PATHS_PLUGINS plugins install camptocamp-prometheus-alertmanager-datasource
+RUN grafana-cli --pluginsDir $GF_PATHS_PLUGINS plugins install mtanda-google-calendar-datasource
+RUN grafana-cli --pluginsDir $GF_PATHS_PLUGINS plugins install natel-plotly-panel
+RUN grafana-cli --pluginsDir $GF_PATHS_PLUGINS plugins install mtanda-histogram-panel
+RUN grafana-cli --pluginsDir $GF_PATHS_PLUGINS plugins install natel-discrete-panel
 
 RUN mkdir -p /plugins/humio2grafana &&\
     curl -L https://api.github.com/repos/humio/humio2grafana/tarball/master | tar xz --strip=1 -C /plugins/humio2grafana &&\
