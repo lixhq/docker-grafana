@@ -10,3 +10,6 @@ RUN grafana-cli --pluginsDir $GF_PATHS_PLUGINS plugins install natel-discrete-pa
 RUN mkdir -p $GF_PATHS_PLUGINS/humio2grafana &&\
     curl -L https://api.github.com/repos/humio/humio2grafana/tarball/master | tar xz --strip=1 -C $GF_PATHS_PLUGINS/humio2grafana &&\
     echo "humio2graphana installed"
+
+ENTRYPOINT ["sh", "-c"]
+CMD ["chown -R grafana:grafana /var/lib/grafana && /run.sh"]
