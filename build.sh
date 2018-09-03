@@ -1,4 +1,5 @@
-#!/bin/bash
+#!/usr/bin/env bash
+
 GRAFANA_VERSION=$1
 DOCKER_IMAGE=${2:-local/grafana}
 VERSION=${3:-local}
