@@ -2,7 +2,7 @@ steps:
   - name: Build
     command: ./.buildkite/build.sh
     env:
-      GRAFANA_VERSION: 5.2.3
-      VERSION: 5.2.3
+      GRAFANA_VERSION: 5.3.0
+      VERSION: 5.3.0
       PUSH_IMAGE: 'true'
     branches: "master"

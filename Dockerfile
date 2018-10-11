@@ -6,6 +6,7 @@ RUN grafana-cli --pluginsDir $GF_PATHS_PLUGINS plugins install mtanda-google-cal
 RUN grafana-cli --pluginsDir $GF_PATHS_PLUGINS plugins install natel-plotly-panel
 RUN grafana-cli --pluginsDir $GF_PATHS_PLUGINS plugins install mtanda-histogram-panel
 RUN grafana-cli --pluginsDir $GF_PATHS_PLUGINS plugins install natel-discrete-panel
+RUN grafana-cli --pluginsDir $GF_PATHS_PLUGINS plugins install grafana-piechart-panel
 
 RUN mkdir -p $GF_PATHS_PLUGINS/humio2grafana &&\
     curl -L https://api.github.com/repos/humio/humio2grafana/tarball/master | tar xz --strip=1 -C $GF_PATHS_PLUGINS/humio2grafana &&\
